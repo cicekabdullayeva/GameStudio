@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/bootstrap-spinner.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Play Eat Repeat</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg  bg-transparent">
+            <div class="container ">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/mainLogo.svg" alt="Play Eat Repeat" title="Play Eat Repeat">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown navbar-dropdown">
+                            <a class="nav-link " href="#about">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown navbar-dropdown">
+                            <a class="nav-link active " href="#">
+                                Careers
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown navbar-dropdown">
+                            <a class="nav-link  " href="#projects">
+                                Games
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown navbar-dropdown">
+                            <a class="nav-link " href="#contact">
+                                Contact us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu d-none">
+            <div class="flex-between">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/mainLogo.svg" alt="Azerbaijan Artifical Intellengent Lab"
+                        title="Azerbaijan Artifical Intellengent Lab">
+                </a>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <ul class="list-unstyled">
+                <li class="nav-item ">
+                    <a class="nav-link " href="">
+                        About
+                    </a>
+                </li>
+                {{-- <li class="nav-item ">--}}
+                    {{-- <a class="nav-link" href="#">--}}
+                        {{-- Project--}}
+                        {{-- </a>--}}
+                    {{-- </li>--}}
+                <li class="nav-item ">
+                    <a class="nav-link @if(Request::is(Config::get('app.locale').'/blogs')) active @endif"
+                        href="/{{$lang}}/blogs">
+                        Blog
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link @if(Request::is(Config::get('app.locale').'/trainings')) active @endif"
+                        href="/{{$lang}}/trainings">
+                        Trainings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if(Request::is(Config::get('app.locale').'/jobs')) active @endif"
+                        href="/{{$lang}}/jobs">
+                        Jobs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if(Request::is(Config::get('app.locale').'/builder')) active @endif"
+                        href="/{{$lang}}/builder">Venture Builder</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if(Request::is(Config::get('app.locale').'/contact')) active @endif"
+                        href="/{{$lang}}/contact">Contact</a>
+                </li>
+                <li>
+                    <a class="nav-link dropdown-toggle language" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                stroke="#05294A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M3 12H22" stroke="#05294A" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M12 2.2019C14.4744 4.72698 16 8.18526 16 11.9999C16 15.8145 14.4744 19.2728 12 21.7978"
+                                stroke="#05294A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M12 2.2019C9.52563 4.72698 8 8.18526 8 11.9999C8 15.8145 9.52563 19.2728 12 21.7978"
+                                stroke="#05294A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        {{ucfirst($lang)}}
+                    </a>
+                    <ul class="dropdown-menu lang" aria-labelledby="navbarDropdown">
+                        @foreach($languages as $item)
+                        @if($item->name != $lang)
+                        <li><a class="dropdown-item" href="/{{$item->name}}">{{ucfirst($item->name)}}</a></li>
+                        @endif
+                        @endforeach
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+    <main>
+        <section class="career" >
+            <div class="container">
+                <h1>Job Careers</h1>
+                <div class="careerCard">
+                    <div>
+                        <h4>Production Manager</h4>
+                        <p>We are looking for an experienced Junior Product</p>
+                    </div>
+                    <a href="" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#careerModal">Apply</a>
+                    <div class="modal fade" id="careerModal" data-backdrop="static"  tabindex="-1" aria-labelledby="careerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="careerModalLabel">Production Manager</h5>
+                                    <a href="" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#applyModal">Apply</a>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="title" >
+                                        Key Responsibilities:
+                                    </span>
+                                    <ul>
+                                        <li>
+                                            Work with experienced engineers and product owners to identify business opportunities, design and create new
+                                            data
+                                            system from scratch, all the way to deploying software
+                                        </li>
+                                        <li>
+                                            Improve scalability, stability, speed of existing applications
+                                        </li>
+                                        <li>
+                                            Debug and fix production problems
+                                        </li>
+                                        <li>
+                                            Research new technologies and share across organizations
+                                        </li>
+                                    
+                                    </ul>
+                                    <span class="title">
+                                        Requirements:
+                                    </span>
+                                    <ul>
+                                        <li>
+                                            Minimum 3 years of industry experience, preferred at a tech company
+                                        </li>
+                                        <li>
+                                            Experience with at least one of the following languages: Scala, Java, Python, or any functional/OO languages
+                                        </li>
+                                        <li>
+                                            Experience building API products (knows protocols/formats/best practices)
+                                        </li>
+                                        <li>
+                                            Experience working in an agile environment using test-driven methodologies
+                                        </li>
+                                    
+                                    </ul>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal applyModal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="careerModalLabel">Production Manager</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-lg-5 col-12">
+                                                <label for="linkedin" class="form-label">Linkedin profile</label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <a href="" class="btn btn-link linkedin">
+                                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="34" height="34" rx="4" fill="white" />
+                                                        <path
+                                                            d="M9 11C10.1046 11 11 10.1046 11 9C11 7.89543 10.1046 7 9 7C7.89543 7 7 7.89543 7 9C7 10.1046 7.89543 11 9 11Z"
+                                                            stroke="#1C84CF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 14H7V27H11V14Z" stroke="#1C84CF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path
+                                                            d="M15 27H19V20C19 18.8954 19.8954 18 21 18C22.1046 18 23 18.8954 23 20V27H27V20C27 16.6863 24.3137 14 21 14C17.6863 14 15 16.6863 15 20V27Z"
+                                                            stroke="#1C84CF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                    Apply with linkedin
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-5 col-12">
+                                                <label for="cv" class="form-label">Resume/CV *</label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <div class="input-group uploadFile btn-link resume  ">
+                                                    <label class="input-group-text" for="inputGroupFile02">
+                                                        <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_54_105)">
+                                                                <path
+                                                                    d="M20.7464 27.6305C19.6716 28.7053 18.248 29.297 16.7378 29.2967C15.2276 29.2964 13.804 28.7053 12.7292 27.6305C11.6547 26.556 11.063 25.1325 11.0633 23.6222L11.0633 7.02477C11.0639 4.65076 12.9621 2.85899 15.4803 2.85899C17.9984 2.85899 19.8972 4.64954 19.8975 7.02447L19.8975 22.6167C19.8975 24.0804 18.7068 25.2735 17.2407 25.2735C15.7755 25.2732 14.5839 24.081 14.5839 22.6167L14.5839 12.0547C14.5839 11.6983 14.8725 11.4098 15.2288 11.4098C15.5852 11.4098 15.8737 11.6983 15.8737 12.0547L15.8737 22.6167C15.8737 23.3702 16.487 23.9834 17.2407 23.9838C17.9947 23.9831 18.6071 23.3696 18.6077 22.6167L18.6077 7.02447C18.6074 5.38534 17.2632 4.14877 15.4803 4.14877C13.6973 4.14877 12.3531 5.38534 12.3531 7.02478L12.3531 23.6222C12.3531 24.788 12.8107 25.8877 13.6414 26.7184C14.4723 27.5493 15.5721 28.0069 16.7378 28.0069C17.9035 28.0069 19.0033 27.5493 19.8342 26.7184C20.6649 25.8877 21.1225 24.788 21.1225 23.6222L21.1225 7.02478C21.1225 6.66843 21.411 6.37989 21.7674 6.37989C22.1237 6.37989 22.4123 6.66843 22.4123 7.02478L22.4123 23.6222C22.4123 25.1321 21.8209 26.556 20.7464 27.6305Z"
+                                                                    fill="black" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_54_105">
+                                                                    <rect width="22.6274" height="22.6274" fill="white" transform="translate(0.376953 16) rotate(-45)" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </label>
+                                                    <input type="text" class="form-control " placeholder="Attach resume/cv">
+                                                    <input type="file" class="form-control d-none" name="file" id="inputGroupFile02">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-12">
+                                                <label for="fullName" class="form-label">Full name </label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <input type="text" required class="form-control" id="fullName">
+                                            </div>
+                                            <div class="col-lg-5 col-12">
+                                                <label for="email" class="form-label">E-mail* </label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <input type="email" required class="form-control" id="email">
+                                            </div>
+                                            <div class="col-lg-5 col-12">
+                                                <label for="phone" class="form-label">Phone* </label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <input type="number" required class="form-control" id="phone">
+                                            </div>
+                                            <div class="col-lg-5 col-12">
+                                                <label for="info" class="form-label">Info* </label>
+                                            </div>
+                                            <div class="col-lg-7 col-12">
+                                                <textarea  required class="form-control" id="info">
+                                                </textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <a href="" class="btn btn-green">Apply</a>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="careerCard">
+                    <div>
+                        <h4>Production Manager</h4>
+                        <p>We are looking for an experienced Junior Product</p>
+                    </div>
+                    <a href="" class="btn btn-green">Apply</a>
+                </div>
+                <div class="careerCard">
+                    <div>
+                        <h4>Production Manager</h4>
+                        <p>We are looking for an experienced Junior Product</p>
+                    </div>
+                    <a href="" class="btn btn-green">Apply</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Careers</a>
+                    </li>
+                    <li>
+                        <a href="">Games</a>
+                    </li>
+                    <li>
+                        <a href="">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-12 copyRight">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 21.4805C16.9706 21.4805 21 17.3589 21 12.2746C21 7.19025 16.9706 3.0686 12 3.0686C7.02944 3.0686 3 7.19025 3 12.2746C3 17.3589 7.02944 21.4805 12 21.4805Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M14.5001 9.20599C13.9949 8.68517 13.3719 8.34582 12.7058 8.22866C12.0398 8.11149 11.3589 8.22149 10.745 8.54546C10.1311 8.86943 9.6102 9.3936 9.24481 10.0551C8.87942 10.7166 8.68506 11.4872 8.68506 12.2746C8.68506 13.062 8.87942 13.8327 9.24481 14.4942C9.6102 15.1557 10.1311 15.6798 10.745 16.0038C11.3589 16.3278 12.0398 16.4378 12.7058 16.3206C13.3719 16.2035 13.9949 15.8641 14.5001 15.3433"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>
+                        Play Eat Repeat Game Studios 2022
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script> -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
